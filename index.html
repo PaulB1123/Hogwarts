@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+  <title>Hogwarts Assigment</title>
+
+</head>
+
+<body>
+
+  <div class="navigationAlwaysStay">
+    <div class="navigation_bar">
+      <h1>Hogwards List</h1>
+
+      <div class="search_bar">
+        <div class="search_wrapper">
+          <input type="text" name="searchbar" id="searchbar" placeholder="Search here ..." />
+        </div>
+        <img src="/Hogwarts/svg/search.svg" class="searchbar_icon" id="searchbar_icon" alt="searchicon">
+      </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <p>
+      <!-- <div id="filter_button">Filter:</div> -->
+      <!-- <button class="filter" data-action="filter" data-filter="allStudents" id="firstname">All Students</button> -->
+      <div class="houses">
+        <button class="filter" data-action="filter" data-filter="all" id="all">All houses</button>
+        <button class="filter" data-action="filter" data-filter="Slytherin" id="Slytherin">Slytherin</button>
+        <button class="filter" data-action="filter" data-filter="Hufflepuff" id="Hufflepuff">Hufflepuff</button>
+        <button class="filter" data-action="filter" data-filter="Ravenclaw" id="Ravenclaw">Ravenclaw</button>
+        <button class="filter" data-action="filter" data-filter="Gryffindor" id="Gryffindor">Gryffindor</button>
+      </div>
+      <div class="explled">
+        <button class="filter" data-action="filter" data-filter="all" id="allStudents">All students</button>
+        <button class="filter" data-action="filter" data-filter="remendingStudents" id="remendingStudents">Remending
+          Students</button>
+        <button class="filter" data-action="filter" data-filter="expelledStudents" id="expelledStudentsForOne">Expelled
+          Students</button>
+      </div>
+
+    </p>
+    <h3></h3>
+
+
+  </div>
+
+  <div class="bodyOfThePage">
+    
+
+
+    <table id="list">
+      <thead>
+        <tr id="sorting">
+          <th data-action="" data-sort-direction="asc" data-sort="photo"></th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="firstname">First Name</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="lastname">Last Name</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="middlename">Middle Name</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="house">House</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- animal template will be copied and inserted here -->
+      </tbody>
+    </table>
+
+
+    <template id="student">
+      <tr>
+        <td data-field="photo"><img src="" alt=""></td>
+        <td data-field="firstName">First Name</td>
+        <td data-field="last-name">Last Name</td>
+        <td data-field="middle-name">Middle Name</td>
+        <td data-field="house">House</td>
+      </tr>
+    </template>
+
+
+    <section id="alertModal" class="smallModal hidden">
+      <p>&#10008;</p>
+      <p></p>
+    </section>
+
+
+    <div class="popup_container">
+      <div class="popup_dim"></div>
+      <div class="popup">
+
+        <div class="close">
+          <img src="elements/close.svg" alt="Close popup">
+        </div>
+
+        <div class="student_heading">
+          <h2>Student name</h2>
+          <div class="popup_crest_container">
+            <img src="elements/Gryffindor_crest.png" class="popup_crest" alt="House crest">
+          </div>
+          <h3 class="is_expelled">EXPELLED</h3>
+        </div>
+
+        <div class="popup_info">
+
+          <div class="popup_image">
+            <img src="elements/students/potter_h.png" alt="Student Image of Student" class="student_image">
+          </div>
+
+          <table class="popup_student_info">
+
+            <tr class="popup_first_name">
+              <td class="td_label">First name:</td>
+              <td class="popup_info_content">First name</td>
+            </tr>
+
+            <tr class="popup_middle_name">
+              <td class="td_label">Middle name:</td>
+              <td class="popup_info_content">First name</td>
+            </tr>
+
+            <tr class="popup_nick_name">
+              <td class="td_label">Nick name:</td>
+              <td class="popup_info_content">Nick name</td>
+            </tr>
+
+            <tr class="popup_last_name">
+              <td class="td_label">Last name:</td>
+              <td class="popup_info_content">Last name</td>
+            </tr>
+            <tr class="popup_blood_status">
+              <td class="td_label">Blood status:</td>
+              <td class="popup_info_content">Blood status</td>
+            </tr>
+            <tr class="popup_gender">
+              <td class="td_label">Gender:</td>
+              <td class="popup_info_content">Gender</td>
+            </tr>
+
+          </table>
+
+          <div class="popup_statuses">
+            <div class="popup_prefect">
+            </div>
+            <div class="popup_inq_squad">
+            </div>
+          </div>
+
+          <div class="modalLeftBottom">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+          </div>
+
+          <div class="popup_options_container">
+            <div class="popup_option_buttons">
+              <b>Admin interface</b>
+              <button class="options_button make_prefect">Make prefect</button>
+              <button class="options_button make_inq" id="makeSquad">Add to squad</button>
+              <button class="options_button expel" id="expelButton">Expel student</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

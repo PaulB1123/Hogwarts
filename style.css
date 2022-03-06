@@ -1,0 +1,593 @@
+
+:root {
+    /* Base colors for houses */
+    --Gryffindor-main-color: #EA5353;
+    --Hufflepuff-main-color: #EAD253;
+    --Slytherin-main-color: #53EA74;
+    --Ravenclaw-main-color: #53B9EA;
+    --Grey-font-main-color: #4C4C66;
+    --Purple-search-bar: #6F6C99;
+    --Grey-border-main-color: #E2E2E8;
+}
+
+@font-face {
+    font-family: Hermione_Font;
+    src: url(/Hogwarts/HermioneFont/hermionefree-nr29y.ttf);
+}
+
+
+
+html {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    overflow-y: scroll;
+    background-color: #fefff6;
+    width: min(95%, 1900px);
+    margin-inline: auto;
+}
+
+/* main {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 0 auto;
+} */
+
+table {
+    border-collapse: collapse;
+}
+
+
+/* layout for the page */
+
+/* naviagtion bar start */
+
+h1 {
+    font-family: Hermione_Font;
+    font-size: clamp(3.13rem, calc(2.64rem + 2.44vw), 4.38rem);
+    font-weight: 300;
+
+}
+
+input {
+    mix-blend-mode: normal;
+    padding: 0.4rem;
+    padding-left: 1rem;
+    border: 0.909977px solid #E2E2E8;
+    box-sizing: border-box;
+    border-radius: 9.09977px;
+    font-family: Hermione_Font;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.searchbar_icon {
+    margin: 0.4rem;
+    width: 1.6rem;
+    cursor: pointer;
+}
+
+
+.navigation_bar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search_bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+/* filter bar start */
+#filter_button {
+    width: 6rem;
+    font-family: Hermione_Font;
+    font-size: 20px;
+    font-weight: 200;
+    padding: 0.15rem;
+    padding-left: 1rem;
+    letter-spacing: 2px;
+    mix-blend-mode: normal;
+    border: 0.909977px solid #E2E2E8;
+    box-sizing: border-box;
+    border-radius: 9.09977px;
+}
+
+/* house filter bar start */
+.houses {
+    margin: 2rem;
+    margin-left: 0rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.houses button {
+    transition: all .5s ease;
+    margin-right: 1rem;
+    width: 7rem;
+    font-family: Hermione_Font;
+    font-size: 20px;
+    font-weight: 200;
+    padding: 0.15rem;
+    mix-blend-mode: normal;
+    border: 0.909977px solid #E2E2E8;
+    box-sizing: border-box;
+    border-radius: 9.09977px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.houses button:hover {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+}
+
+.houses #all {
+    filter: drop-shadow(0px 2px 20px rgba(128, 128, 128, 0.2))
+}
+
+.houses #all:hover {
+    color: white;
+    background-color: black;
+}
+
+.houses #Slytherin {
+    border: 0.909977px solid #53B9EA;
+    color: #53B9EA;
+    filter: drop-shadow(0px 1px 60px rgba(100, 192, 236, 0.2));
+}
+
+.houses #Slytherin:hover {
+    color: white;
+    background-color: #53B9EA;
+}
+
+.houses #Hufflepuff {
+    border: 0.909977px solid #EAD253;
+    color: #EAD253;
+    filter: drop-shadow(0px 1px 60px rgba(236, 214, 100, 0.4));
+}
+
+.houses #Hufflepuff:hover {
+    color: white;
+    background-color: #EAD253;
+}
+
+.houses #Ravenclaw {
+    border: 0.909977px solid #EA5353;
+    color: #EA5353;
+    filter: drop-shadow(0px 1px 60px rgba(236, 100, 100, 0.4));
+}
+
+.houses #Ravenclaw:hover {
+    color: white;
+    background-color: #EA5353;
+}
+
+.houses #Gryffindor {
+    border: 0.909977px solid #53EA74;
+    color: #53EA74;
+    filter: drop-shadow(0px 1px 20px rgba(100, 235, 129, 0.3));
+
+}
+
+.houses #Gryffindor:hover {
+    color: white;
+    background-color: #53EA74;
+}
+
+.explled button {
+    transition: all .5s ease;
+    margin-right: 1rem;
+    width: 13rem;
+    font-family: Hermione_Font;
+    font-size: 20px;
+    font-weight: 200;
+    padding: 0.15rem;
+    mix-blend-mode: normal;
+    border: 0.909977px solid #E2E2E8;
+    box-sizing: border-box;
+    border-radius: 9.09977px;
+    background-color: white;
+    cursor: pointer;
+    filter: drop-shadow(0px 2px 20px rgba(128, 128, 128, 0.2));
+}
+
+.explled button:hover {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+}
+
+.explled button:hover {
+    color: white;
+    background-color: black;
+}
+
+.explled #allStudents {
+    width: 7.5rem;
+}
+
+/* house filter bar stop */
+
+/* filter bar stop */
+
+.navigationAlwaysStay {
+    width: min(100%, 1840px);
+    z-index: 2;
+    overflow: hidden;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; 
+    background-color: #fefff6;
+    padding-left: 2rem;
+    margin-left: -2rem;
+    box-shadow: 0px 25px 20px -15px rgba(0, 169, 255, 0.05);   
+}
+/* naviagtion bar stop */
+
+/* The Body of the page start */
+.bodyOfThePage {
+    margin-top: 29rem;
+    /* height: 150vh; */
+}
+/* The body of the page stop */
+
+/* list of students start */
+
+h3 {
+    margin-top: 4rem;
+    font-family: Hermione_Font;
+    font-size: 20px;
+}
+
+#list {
+    width: 100% !important;
+}
+
+#sorting {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    font-family: Hermione_Font;
+    font-size: 20px;
+}
+
+#sorting th:not(:first-child) {
+    mix-blend-mode: normal;
+    border: 0.909977px solid #E2E2E8;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 2px 20px rgba(27, 24, 63, 0.5));
+    border-radius: 9.09977px;
+}
+
+#sorting th:not(:first-child,:last-child) {
+    border-right: 0px solid #E2E2E8;
+    border-left: 0px solid #E2E2E8;
+}
+
+#sorting th :last-child  {
+    border-right:0px solid #E2E2E8 !important;
+    border-left: 0px solid #E2E2E8 !important;
+}
+
+#sorting th :nth-child(2) {
+    border-right:0.909977px solid #E2E2E8;
+    border-left: 0.909977px solid #E2E2E8;
+}
+
+
+#sorting th {
+    text-align: left;
+}
+
+#student tr {
+    font-family: Hermione_Font;
+    font-size: 20px;
+}
+
+/* tbody {
+    display: flex;
+    font-family: Hermione_Font;
+    font-size: 17px;
+    letter-spacing: 2px;
+} */
+
+tbody {
+width: 115%;
+margin: 2rem;
+cursor: pointer ;
+display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  filter: drop-shadow(0px 4px 4px #B9E0F4);
+}
+
+tbody tr td:first-child {
+    margin: 1rem;
+    padding: 1rem;
+}
+
+tbody tr td:last-child {
+    margin: 1rem;
+    padding: 1rem;
+}
+
+tbody tr {
+    border: 1px solid #CECECE;
+    border-radius: 9.09977px;
+}
+
+tbody tr:hover {
+    outline: 0px solid transparent;
+    /* padding: 2px 2px; */
+    border: 1.5px solid #0198fa;
+    -webkit-transition: all 0.2s ease-in-out;
+    filter: drop-shadow(0px 4px 40px rgba(0, 169, 255, 0.2));
+    transition: all 0.2s ease-in-out;
+  }
+
+
+/* list of students stop */
+
+tbody tr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.popup_container {
+    display: none;
+}
+
+/* The clickable background that dims out the list */
+.popup_dim {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    opacity: 0.5;
+}
+
+.popup {
+    z-index: 30;
+    width: 450px;
+    border: 1px solid black;
+    border-radius: 9.09977px;
+    background-color: #ac1200;
+    filter: drop-shadow(0px 2px 20px rgba(128, 128, 128, 0.5));
+    transition: all 0.2s ease-in-out;
+
+    /* Places the box in the middle of the container */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.popup_info {
+    color: white;
+    padding: 10px 50px 50px 50px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 140px auto auto auto; */
+}
+
+.popup_image img {
+    width: 200px;
+}
+
+
+.close img {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+}
+
+.close img:hover {
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    width: 26px;
+    height: 26px;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+.student_heading {
+    color: white;
+    text-align: center;
+    font-family: Hermione_Font;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 20px 0 0 0;
+}
+
+
+.is_expelled {
+    font-size: 1.6rem;
+    margin-top: 10px;
+}
+
+.popup_crest {
+    height: 50px;
+    margin-top: 10px;
+}
+
+.td_label {
+    padding-right: 10px;
+}
+
+.popup_student_info {
+    display: grid;
+}
+
+.popup_options_container {
+    /* width: 100%; */
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3rem;
+    font-family: Hermione_Font;
+}
+
+.popup_option_buttons {
+    width: 190px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 9.09977px;
+}
+
+.popup_option_buttons button {
+    height: fit-content;
+    width: 100%;
+    text-align:left;
+    padding: 5px;
+    margin: 3px;
+    border: 1px solid #A8A8A8;
+    border-radius: 9.09977px;
+    font-family: Hermione_Font;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.popup_option_buttons button:hover {
+    color: white;
+    background-color: black;
+    transition: all 0.2s ease-in-out;
+}
+
+.td_label {
+    font-weight: bold;
+}
+
+/* popup starts */
+
+.popup_student_info tbody tr {
+    display: flex;
+    flex-direction: row;
+    border: 0px solid #CECECE;
+    font-family: Hermione_Font;
+    letter-spacing: 1px;
+    border-radius: 0px;
+    margin: 0rem;
+    padding: 0.15rem;
+}
+
+
+.smallModal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    background-color: #E2E2E8;
+    box-shadow: 0px 0px 6px 1px #aabbc2;
+    width: 420px;
+    height: 800px;
+    z-index: 50;
+  }
+  
+  #alertModal p:nth-of-type(1) {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: -0.3rem;
+  }
+  
+  #alertModal p:nth-of-type(2) {
+    text-align: center;
+    font-family: Hermione_Font;
+    font-size: 30px;
+    margin-top: 14rem;
+    margin-left:2rem;
+    margin-right:2rem;
+  }
+
+
+.popup_student_info tbody tr td:last-child {
+    margin: 0rem;
+    padding: 0rem;
+}
+
+.popup_student_info tbody tr td:first-child  {
+    margin: 0rem;
+    padding: 0rem;
+}
+
+.popup_student_info tbody  {
+    display: block;
+    filter: none;
+}
+
+/* popup ends */
+
+
+/* ----- HELPERS ----- */
+
+.zIndex {
+    z-index: 40;
+  }
+
+.hidden {
+    display: none;
+}
+
+.desktop-hidden {
+    display: none;
+}
+
+.fade_out {
+    animation-name: fade_out_kf;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade_out_kf {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.dontexpelme {
+    margin: 100px 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.dontexpelme a {
+    font-size: 2rem;
+    margin: 50px 0;
+    color: deeppink;
+}
+
+.dontexpelme img {
+    max-width: 100%;
+}
